@@ -13,7 +13,6 @@ package org.glassfish.external.arc;
 /**
   Taxonomy values.
   See http://opensolaris.org/os/community/arc/policies/interface-taxonomy/
-  <p>
   <h3>Policy</h3>
     <ul>
     <li>Applies to All software produced by SMI</li>
@@ -21,6 +20,7 @@ package org.glassfish.external.arc;
     <li>Approval SAC</li>
     <li>Effective April, 1992</li>
     <li>Policy </li>
+    </ul>
         <ul><li>All software interfaces must be classified according to this taxonomy.
         Interfaces are defined as APIs, files and directory structures, file formats, protocols,
         (sometimes) even performance and reliability behaviors, and any other attribute upon
@@ -45,7 +45,6 @@ package org.glassfish.external.arc;
         in the documentation. In the case where a well-defined, versioned document is the
         specification, both the name and precise version must be be cited.</li>
         </ul>
-    </ul>
   @author llc
  */
 public enum Stability  {
@@ -104,7 +103,7 @@ public enum Stability  {
     |   |---------------------+------------------------------------------------|                           
     |   | Examples            | SUNW* package abbreviations, some config utils |                           
     +--------------------------------------------------------------------------+                           
-    </pre>
+  </pre>
     No guarantees are made about either source or binary compatibility of these interfaces
     from one Minor release to the next. The most drastic incompatible change of removal of
      the interface in a Minor release is allowed. Uncommitted interfaces are generally not
@@ -117,7 +116,6 @@ public enum Stability  {
     small in impact and should often have a mitigation plan.
     <p>
     Uncommitted interfaces generally fall into one of the following subcategories:
-    <p>
     <ul>
         <li>
             Interfaces that are experimental or transitional.
@@ -139,7 +137,7 @@ public enum Stability  {
             stability. This attribute is often asserted for administrative interfaces for higher
             web tier components. Note that ARC review may request data to support such an assertion.
         </li>
-    <p>
+    </ul>
     A project's intention to import an Uncommitted interface from another consolidation should
     be discussed with the ARC early. The stability classification of the interface -- or
     a replacement interface -- might be raised. The opinion allowing any project to import an
@@ -157,8 +155,7 @@ public enum Stability  {
     the standard (or the portions we find technically sound or likely to be standardized),
     we set customer expectations for incompatible changes by classifying the interface Uncommitted.
     The interface must be reclassified Committed when standard is final.
-    Such an intention could be encoded "Uncommitted->Committed".)
-</pre>
+    Such an intention could be encoded "Uncommitted-&gt;Committed".)
  */
     UNCOMMITTED( "Uncommitted" ),
     

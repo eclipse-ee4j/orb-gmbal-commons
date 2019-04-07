@@ -68,7 +68,7 @@ public final class AMXGlassfish
         return "server";
     }
     
-    /** name of the Domain Admin Server (DAS) &lt;config> */
+    /** name of the Domain Admin Server (DAS) &lt;config&gt; */
     public String dasConfig()
     {
         return dasName() + "-config";
@@ -145,7 +145,7 @@ public final class AMXGlassfish
     /**
     Invoke the bootAMX() method on {@link BootAMXMBean}.  Upon return,
     AMX continues to load.
-    A cilent should call {@link invokeWaitAMXReady} prior to use.
+    A cilent should call {@link #invokeWaitAMXReady} prior to use.
     */
     public void invokeBootAMX(final MBeanServerConnection conn)
     {
@@ -220,7 +220,7 @@ public final class AMXGlassfish
     
     /**
         Listen for the registration of the {@link BootAMXMBean}.
-        Listening starts automatically.  See {@link AMXBooter#BootAMXCallback}.
+        Listening starts automatically.
      */
     public <T extends MBeanListener.Callback> MBeanListener<T> listenForBootAMX(
         final MBeanServerConnection server,

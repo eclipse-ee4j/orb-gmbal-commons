@@ -10,16 +10,16 @@
 
 package org.glassfish.external.amx;
 
+import static org.glassfish.external.amx.AMX.NAME_KEY;
+import static org.glassfish.external.amx.AMX.TYPE_KEY;
+
 import java.util.Set;
-import javax.management.MBeanServer;
+import java.util.concurrent.CountDownLatch;
 import javax.management.MBeanServerConnection;
 import javax.management.MBeanServerNotification;
 import javax.management.Notification;
 import javax.management.NotificationListener;
 import javax.management.ObjectName;
-import java.util.concurrent.CountDownLatch;
-
-import static org.glassfish.external.amx.AMX.*;
 
 /**
  * Listens for registration of MBeans of various types.
@@ -136,7 +136,7 @@ public class MBeanListener<T extends MBeanListener.Callback> implements Notifica
  
     /**
      * Listener for a specific MBean.
-     * Caller must call {@link #start} to start listening.
+     * Caller must call {@link #startListening()} to start listening.
      * @param server
      * @param objectName
      * @param callback
@@ -156,7 +156,7 @@ public class MBeanListener<T extends MBeanListener.Callback> implements Notifica
     
     /**
      * Listener for all MBeans of specified type, with or without a name.
-     * Caller must call {@link #start} to start listening.
+     * Caller must call {@link #startListening()} to start listening.
      * @param server
      * @param type type of the MBean (as found in the ObjectName)
      * @param callback
@@ -173,7 +173,7 @@ public class MBeanListener<T extends MBeanListener.Callback> implements Notifica
     /**
      * Listener for MBeans of specified type, with specified name (or any name
      * if null is passed for the name).
-     * Caller must call {@link #start} to start listening.
+     * Caller must call {@link #startListening()} to start listening.
      * @param server
      * @param type type of the MBean (as found in the ObjectName)
      * @param name name of the MBean, or null if none

@@ -56,7 +56,8 @@
     </distributionManagement>
  
     <properties>
-        <jdkVersion>7</jdkVersion>
+        <base.jdk.version>8</base.jdk.version>
+        <upper.jdk.version>9</upper.jdk.version>
         <legal.doc.source>${maven.multiModuleProjectDirectory}</legal.doc.source>
     </properties>
 
@@ -82,7 +83,7 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.1.1</version>
                     <configuration>
-                        <release>${jdkVersion}</release>
+                        <release>${base.jdk.version}</release>
                         <sourceFileExcludes>
                             <sourceFileExclude>module-info.java</sourceFileExclude>
                         </sourceFileExcludes>
@@ -102,7 +103,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>9</release>
+                    <release>${upper.jdk.version}</release>
                     <compilerArgs>
                         <arg>-Xlint:all</arg>
                     </compilerArgs>
@@ -114,7 +115,7 @@
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <release>${jdkVersion}</release>
+                            <release>${base.jdk.version}</release>
                             <excludes>
                                 <exclude>module-info.java</exclude>
                             </excludes>

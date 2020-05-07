@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2011, 2019 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2011, 2020 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.eclipse.ee4j</groupId>
         <artifactId>project</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6</version>
     </parent>
 
     <groupId>org.glassfish.external</groupId>
@@ -27,7 +27,7 @@
     <name>management-api</name>
     <description>Eclipse ORB</description>
     <url>https://github.com/eclipse-ee4j/orb-gmbal-commons</url>
-    
+
     <licenses>
         <license>
             <name>EDL 1.0</name>
@@ -35,7 +35,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
+
     <scm>
         <connection>scm:git:ssh://git@github.com/eclipse/orb-gmbal-commons.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/eclipse/orb-gmbal-commons.git</developerConnection>
@@ -54,7 +54,7 @@
             <url>scm:git:https://github.com/eclipse-ee4j/orb-gmbal-commons.git</url>
         </site>
     </distributionManagement>
- 
+
     <properties>
         <base.jdk.version>8</base.jdk.version>
         <upper.jdk.version>9</upper.jdk.version>
@@ -135,32 +135,32 @@
                         <Bundle-Name>${project.name}</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Export-Package>
-                            org.glassfish.external.*                   
-                        </Export-Package>             
+                            org.glassfish.external.*
+                        </Export-Package>
                     </instructions>
                 </configuration>
                 <executions>
                     <execution>
                         <id>bundle-manifest</id>
                         <phase>process-classes</phase>
-                        <goals>    
+                        <goals>
                             <goal>manifest</goal>
-                        </goals>   
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <archive>  
+                    <archive>
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -186,7 +186,7 @@
                             </configuration>
                         </execution>
                   </executions>
-            </plugin> 
+            </plugin>
             <!-- prevent the site plugin from deploying to the scm url -->
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
@@ -226,10 +226,10 @@
                 <version>1.6</version>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId> 
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.0.0-M2</version>
-            </plugin>  
+            </plugin>
         </plugins>
     </build>
 

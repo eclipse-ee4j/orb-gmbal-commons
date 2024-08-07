@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -240,10 +241,8 @@ public final class AMXGlassfish
      */
     public static class BootAMXCallback extends MBeanListener.CallbackImpl
     {
-        private final MBeanServerConnection mConn;
         public BootAMXCallback(final MBeanServerConnection conn)
         {
-            mConn = conn;
         }
 
         @Override

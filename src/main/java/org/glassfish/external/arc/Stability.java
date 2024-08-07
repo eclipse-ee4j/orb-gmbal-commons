@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -304,7 +305,7 @@ public enum Stability  {
     UNSPECIFIED( "Unspecified" );
     
     private final String mName;
-    private Stability( final String name ) { mName = name; }
+    Stability(final String name) { mName = name; }
     
     public String toString() { return mName; }
 }

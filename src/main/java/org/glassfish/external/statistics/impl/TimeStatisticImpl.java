@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -35,7 +36,7 @@ public final class TimeStatisticImpl extends StatisticImpl
             new Class[] { TimeStatistic.class },
             this);
 
-    public synchronized final String toString() {
+    public synchronized String toString() {
         return super.toString() + NEWLINE + 
             "Count: " + getCount() + NEWLINE +
             "MinTime: " + getMinTime() + NEWLINE +

@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -29,8 +30,6 @@ import javax.management.ObjectName;
 @org.glassfish.external.arc.Taxonomy(stability = org.glassfish.external.arc.Stability.UNCOMMITTED)
 public class MBeanListener<T extends MBeanListener.Callback> implements NotificationListener
 {
-    private static void debug(final Object o) { System.out.println( "" + o ); }
-    
     /** listen for MBeans in a given domain of a given type[name] 
         OR an ObjectName (below) */
     private final String mJMXDomain;
@@ -67,8 +66,8 @@ public class MBeanListener<T extends MBeanListener.Callback> implements Notifica
     /** Callback interface.  */
     public interface Callback
     {
-        public void mbeanRegistered(final ObjectName objectName, final MBeanListener listener);
-        public void mbeanUnregistered(final ObjectName objectName, final MBeanListener listener);
+        void mbeanRegistered(final ObjectName objectName, final MBeanListener listener);
+        void mbeanUnregistered(final ObjectName objectName, final MBeanListener listener);
     }
     
     /**

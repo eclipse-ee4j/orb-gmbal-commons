@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -26,7 +27,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Target( {METHOD, TYPE, ANNOTATION_TYPE, FIELD, PACKAGE})
 public @interface Taxonomy  {
-    public Stability stability() default Stability.UNSPECIFIED;
-    public String description() default "";
+    Stability stability() default Stability.UNSPECIFIED;
+    String description() default "";
 }
 

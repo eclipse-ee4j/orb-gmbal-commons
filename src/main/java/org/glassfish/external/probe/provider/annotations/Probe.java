@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -25,13 +26,13 @@ import java.lang.annotation.ElementType;
 @Target({ElementType.METHOD})
 public @interface Probe {
 
-    public String name() default "";
-    public boolean hidden() default false;
-    public boolean self() default false;
-    public String providerName() default "";
-    public String moduleName() default "";
-    public boolean stateful() default false;
-    public String profileNames() default "";
-    public boolean statefulReturn() default false;
-    public boolean statefulException() default false;
+    String name() default "";
+    boolean hidden() default false;
+    boolean self() default false;
+    String providerName() default "";
+    String moduleName() default "";
+    boolean stateful() default false;
+    String profileNames() default "";
+    boolean statefulReturn() default false;
+    boolean statefulException() default false;
 }

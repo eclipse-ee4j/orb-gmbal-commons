@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -24,7 +25,7 @@ public class StatsProviderManager {
    
    public static boolean register(String configElement, PluginPoint pp,
                                     String subTreeRoot, Object statsProvider) {
-        return (register(pp, configElement, subTreeRoot, statsProvider, null));
+        return register(pp, configElement, subTreeRoot, statsProvider, null);
    }
 
    public static boolean register(PluginPoint pp, String configElement,
@@ -39,7 +40,7 @@ public class StatsProviderManager {
    public static boolean register(String configElement, PluginPoint pp,
                                     String subTreeRoot, Object statsProvider,
                                     String configLevelStr) {
-        return(register(configElement, pp, subTreeRoot, statsProvider, configLevelStr, null));
+        return register(configElement, pp, subTreeRoot, statsProvider, configLevelStr, null);
    }
 
    public static boolean register(String configElement, PluginPoint pp,

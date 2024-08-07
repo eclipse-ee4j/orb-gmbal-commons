@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -76,8 +77,8 @@ public abstract class StatisticImpl implements Statistic {
         if (isValidString(statisticDesc)) {
             statMap.put("description", statisticDesc);
         }
-        statMap.put(StatisticImpl.START_TIME, startTime);
-        statMap.put(StatisticImpl.LAST_SAMPLE_TIME, sampleTime);
+        statMap.put(START_TIME, startTime);
+        statMap.put(LAST_SAMPLE_TIME, sampleTime);
         return statMap;
     }
     
@@ -115,7 +116,7 @@ public abstract class StatisticImpl implements Statistic {
     }
 
     protected static boolean isValidString(String str) {
-        return (str!=null && str.length()>0);
+        return str!=null && str.length()>0;
     }
 
     protected void checkMethod(Method method) {

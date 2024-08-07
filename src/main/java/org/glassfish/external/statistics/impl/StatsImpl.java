@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -11,7 +12,6 @@
 package org.glassfish.external.statistics.impl;
 import org.glassfish.external.statistics.Stats;
 import org.glassfish.external.statistics.Statistic;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /** 
@@ -56,7 +56,7 @@ public final class StatsImpl implements Stats {
         for (StatisticImpl s : statArray) {
             s.reset();
         }
-    };
+    }
 
 
 }

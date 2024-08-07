@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2009, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2024 Contributors to the Eclipse Foundation
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -16,7 +17,7 @@ package org.glassfish.external.probe.provider;
  */
 public interface StatsProvider {
 
-    public void enable();
+    void enable();
     
-    public void disable();
+    void disable();
 }

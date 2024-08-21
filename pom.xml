@@ -117,9 +117,6 @@
                         </goals>
                         <configuration>
                             <release>${base.jdk.version}</release>
-                            <excludes>
-                                <exclude>module-info.java</exclude>
-                            </excludes>
                         </configuration>
                     </execution>
                 </executions>

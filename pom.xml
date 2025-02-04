@@ -57,8 +57,7 @@
     </distributionManagement>
 
     <properties>
-        <base.jdk.version>11</base.jdk.version>
-        <upper.jdk.version>11</upper.jdk.version>
+        <maven.compiler.release>11</maven.compiler.release>
         <legal.doc.source>${maven.multiModuleProjectDirectory}</legal.doc.source>
     </properties>
 
@@ -104,22 +103,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <release>${upper.jdk.version}</release>
                     <compilerArgs>
                         <arg>-Xlint:all</arg>
                     </compilerArgs>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>base-compile</id>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <release>${base.jdk.version}</release>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
@@ -146,7 +133,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.4.2</version>
                 <configuration>
                     <archive>
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
@@ -159,26 +145,26 @@
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>3.6.0</version>
                 <executions>
-                   <execution>
-                            <id>add-legal-resource</id>
-                            <phase>generate-resources</phase>
-                            <goals>
-                                <goal>add-resource</goal>
-                            </goals>
-                            <configuration>
-                                <resources>
-                                    <resource>
-                                        <directory>${legal.doc.source}</directory>
-                                        <includes>
-                                            <include>NOTICE.md</include>
-                                            <include>LICENSE.md</include>
-                                        </includes>
-                                        <targetPath>META-INF</targetPath>
-                                    </resource>
-                                </resources>
-                            </configuration>
-                        </execution>
-                  </executions>
+                    <execution>
+                        <id>add-legal-resource</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${legal.doc.source}</directory>
+                                    <includes>
+                                        <include>NOTICE.md</include>
+                                        <include>LICENSE.md</include>
+                                    </includes>
+                                    <targetPath>META-INF</targetPath>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <!-- prevent the site plugin from deploying to the scm url -->
             <plugin>
@@ -211,17 +197,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.2.7</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.5.0</version>
             </plugin>
         </plugins>
     </build>

@@ -25,8 +25,8 @@
     <version>3.3.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>management-api</name>
-    <description>Eclipse ORB</description>
+    <name>Eclipse Management API</name>
+    <description>API for monitoring of Jakarta EE based applications</description>
     <url>https://github.com/eclipse-ee4j/orb-gmbal-commons</url>
 
     <licenses>
@@ -41,8 +41,8 @@
         <connection>scm:git:ssh://git@github.com/eclipse/orb-gmbal-commons.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/eclipse/orb-gmbal-commons.git</developerConnection>
         <url>https://github.com/eclipse-ee4j/orb-gmbal-commons</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <issueManagement>
         <system>github</system>
@@ -94,6 +94,29 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.6.2</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.9.0</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>${maven.compiler.release}</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.15.0</version>
@@ -165,9 +188,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-gpg-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-enforcer-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
@@ -244,35 +264,9 @@
         <profile>
             <id>oss-release</id>
             <properties>
-                <release.projectName>Eclipse Management API</release.projectName>
                 <release.autoPublish>false</release.autoPublish>
                 <release.waitUntil>published</release.waitUntil>
             </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.cyclonedx</groupId>
-                        <artifactId>cyclonedx-maven-plugin</artifactId>
-                        <configuration>
-                            <!-- Without this it doesn't generate cyclonedx files at all. -->
-                            <skipNotDeployed>false</skipNotDeployed>
-                        </configuration>
-                    </plugin>
-                    <!-- We have to override settings from parent -->
-                    <plugin>
-                        <groupId>org.sonatype.central</groupId>
-                        <artifactId>central-publishing-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <autoPublish>${release.autoPublish}</autoPublish>
-                            <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots</centralSnapshotsUrl>
-                            <deploymentName>${release.projectName} ${project.version}</deploymentName>
-                            <publishingServerId>central</publishingServerId>
-                            <waitUntil>${release.waitUntil}</waitUntil>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>

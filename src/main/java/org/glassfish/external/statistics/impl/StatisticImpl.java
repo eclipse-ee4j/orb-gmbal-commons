@@ -10,11 +10,12 @@
  */
 
 package org.glassfish.external.statistics.impl;
-import org.glassfish.external.statistics.Statistic;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.glassfish.external.statistics.Statistic;
 
 /** 
  * @author Sreenivas Munnangi

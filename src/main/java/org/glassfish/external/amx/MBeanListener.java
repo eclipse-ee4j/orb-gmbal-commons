@@ -11,16 +11,17 @@
 
 package org.glassfish.external.amx;
 
-import static org.glassfish.external.amx.AMX.NAME_KEY;
-import static org.glassfish.external.amx.AMX.TYPE_KEY;
-
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+
 import javax.management.MBeanServerConnection;
 import javax.management.MBeanServerNotification;
 import javax.management.Notification;
 import javax.management.NotificationListener;
 import javax.management.ObjectName;
+
+import static org.glassfish.external.amx.AMX.NAME_KEY;
+import static org.glassfish.external.amx.AMX.TYPE_KEY;
 
 /**
  * Listens for registration of MBeans of various types.

@@ -11,11 +11,11 @@
 
 package org.glassfish.external.amx;
 
-import javax.management.ObjectName;
+import java.io.IOException;
+
 import javax.management.MBeanServer;
 import javax.management.MBeanServerConnection;
-
-import java.io.IOException;
+import javax.management.ObjectName;
 
 
 /**

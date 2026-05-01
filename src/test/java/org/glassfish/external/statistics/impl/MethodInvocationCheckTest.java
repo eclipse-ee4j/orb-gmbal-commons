@@ -10,10 +10,10 @@
 
 package org.glassfish.external.statistics.impl;
 
-import org.junit.Test;
-
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
+
+import org.junit.Test;
 
 import static java.util.logging.Level.INFO;
 

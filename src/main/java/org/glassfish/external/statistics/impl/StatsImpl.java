@@ -10,9 +10,10 @@
  */
 
 package org.glassfish.external.statistics.impl;
-import org.glassfish.external.statistics.Stats;
-import org.glassfish.external.statistics.Statistic;
 import java.util.ArrayList;
+
+import org.glassfish.external.statistics.Statistic;
+import org.glassfish.external.statistics.Stats;
 
 /** 
  * @author Jennifer Chou

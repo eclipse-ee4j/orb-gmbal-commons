@@ -10,8 +10,12 @@
 
 package org.glassfish.external.statistics.impl;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Map;
-import java.lang.reflect.*;
+
 import org.glassfish.external.statistics.AverageRangeStatistic;
 
 /**
